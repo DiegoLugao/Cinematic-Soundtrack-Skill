@@ -1,0 +1,84 @@
+{
+  "_about": "Cinematic Reel intro plan (v11): song in A minor, 136 BPM, vocal enters at 9.88 s, drop kick at 39.37 s. Replace the timing with measurements from your song and replace the files with your own. {tom} expands to the top-level 'tom'; {nota} expands to each layer's 'nota'.",
+  "duracao": 58.0,
+  "saida_lufs": -14,
+  "tom": "A",
+  "momentos": [
+    [0, "PING"], [2.5, "DRONES"], [4.2, "CELLO CALL"], [9.88, "VOCAL"], [13.4, "CELLO RESPONSE"],
+    [16.09, "Am CHORD"], [21.5, "G"], [25.0, "F"], [28.7, "G"], [32.23, "Am"],
+    [34.25, "RISERS"], [35.85, "G"], [39.37, "DROP"]
+  ],
+  "camadas": [
+    {
+      "_note": "Tonal hit on the first frame, on the tonic; build it with prep_ping.py.",
+      "arquivo": "prep/ping.wav", "papel": "golpe", "grupo": "ping", "em": 0, "ate": 10, "lufs_alvo": -21
+    },
+    {
+      "_note": "Drone 1 fades in slowly, runs to the drop, and cuts on the kick.",
+      "arquivo": "sons/drone-1-{tom}.wav", "papel": "drone", "grupo": "drones",
+      "em": 2.5, "corte": 0, "ate": 39.37, "fade_in": 4.0, "fade_out": 0.02, "lufs_alvo": -26,
+      "filtro": "highpass=f=90,equalizer=f=180:t=q:w=1:g=1.5,equalizer=f=280:t=q:w=1:g=2,lowpass=f=2500"
+    },
+    {
+      "_note": "Drone 2 is a quieter texture layered above drone 1.",
+      "arquivo": "sons/drone-2-{tom}.wav", "papel": "drone", "grupo": "drones",
+      "em": 2.5, "corte": 0, "ate": 39.37, "fade_in": 4.5, "fade_out": 0.02, "lufs_alvo": -28,
+      "filtro": "highpass=f=90,equalizer=f=180:t=q:w=1:g=1.5,equalizer=f=280:t=q:w=1:g=2.5"
+    },
+    {
+      "_note": "Cello call before the vocal, in C major, the relative major of A minor.",
+      "arquivo": "sons/cello-{nota}.wav", "nota": "C", "papel": "melodia", "grupo": "cello",
+      "em": 4.2, "corte": 0, "ate": 10.6, "fade_in": 0.8, "fade_out": 1.0, "lufs_alvo": -22,
+      "filtro": "lowpass=f=3200"
+    },
+    {
+      "_note": "Quieter cello response in the breath after the first vocal phrase.",
+      "arquivo": "sons/cello-{nota}.wav", "nota": "C", "papel": "melodia", "grupo": "cello",
+      "em": 13.4, "corte": 10, "ate": 18.0, "fade_in": 0.6, "fade_out": 1.5, "lufs_alvo": -26,
+      "filtro": "lowpass=f=3200"
+    },
+    {
+      "_note": "Separated vocal with reverb, from the opening phrase through the drop.",
+      "arquivo": "prep/voz-reverb.wav", "papel": "voz", "grupo": "voz",
+      "em": 9.88, "ate": 39.37, "fade_in": 0.02, "fade_out": 0.03, "lufs_alvo": -16
+    },
+    {
+      "_note": "Sliced chords: C-major progression file containing six 8 s chords (F, G, Am, C, Dm, C). Each slice lands on beat 1 with a stressed word and follows the song harmony: Am G F G Am G.",
+      "arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes",
+      "em": 16.09, "corte": 15.98, "ate": 21.56, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17,
+      "filtro": "bass=g=5:f=70,lowpass=f=2500"
+    },
+    {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes", "em": 21.5, "corte": 8.0, "ate": 25.06, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17, "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+    {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes", "em": 25.0, "corte": 0.08, "ate": 28.76, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17, "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+    {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes", "em": 28.7, "corte": 8.0, "ate": 32.29, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17, "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+    {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes", "em": 32.23, "corte": 15.98, "ate": 35.91, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17, "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+    {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes", "em": 35.85, "corte": 8.0, "ate": 39.37, "fade_in": 0.02, "fade_out": 0.02, "lufs_alvo": -17, "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+    {
+      "_note": "Accent ping on the first and final chords.",
+      "arquivo": "prep/ping.wav", "papel": "golpe", "grupo": "ping", "em": 16.09, "ate": 26.09, "lufs_alvo": -25
+    },
+    {"arquivo": "prep/ping.wav", "papel": "golpe", "grupo": "ping", "em": 35.85, "ate": 39.37, "fade_out": 0.02, "lufs_alvo": -26},
+    {
+      "_note": "Air riser with its peak aligned exactly to the drop.",
+      "arquivo": "sons/riser-1-{tom}.wav", "papel": "riser", "grupo": "risers",
+      "pico_em": 39.37, "subida": 3.68, "ate": 39.37, "fade_out": 0.06, "lufs_alvo": -17.5,
+      "filtro": "lowpass=f=5000"
+    },
+    {
+      "_note": "More aggressive riser; starts earlier and also peaks at the drop.",
+      "arquivo": "sons/riser-2-{tom}.wav", "papel": "riser", "grupo": "risers",
+      "pico_em": 39.37, "subida": 5.12, "ate": 39.37, "fade_out": 0.06, "lufs_alvo": -16,
+      "filtro": "lowpass=f=4000"
+    },
+    {
+      "_note": "At the drop, add the same ping and a tonal impact without sub content so they do not compete with the kick.",
+      "arquivo": "prep/ping.wav", "papel": "golpe", "grupo": "ping", "em": 39.37, "ate": 49.37, "lufs_alvo": -21
+    },
+    {"arquivo": "sons/impacto-{tom}.wav", "papel": "golpe", "grupo": "ping", "em": 39.37, "golpe": true, "lufs_alvo": -20, "passa_altas": 60},
+    {
+      "_note": "The full song enters dry on the kick; 'corte' is 65 ms before the kick at 30.485 s, which lands at 39.37 s in the intro.",
+      "arquivo": "musica/musica.wav", "papel": "musica", "grupo": "musica",
+      "corte": 30.42, "ataque": 0.065, "em": 39.37, "ate": 58.0, "lufs_alvo": -11.5
+    }
+  ]
+}

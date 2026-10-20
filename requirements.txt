@@ -1,0 +1,11 @@
+# Included scripts · Scripts incluídos (Python 3.10+)
+numpy
+scipy
+soundfile
+librosa
+pyloudnorm
+pedalboard
+matplotlib
+# Optional · Opcionais
+# faster-whisper   (medicao/tr.py: word-level vocal timing / tempo de cada palavra)
+# essentia         (medir_musica.py: more reliable key detection; macOS/Linux, or WSL on Windows)

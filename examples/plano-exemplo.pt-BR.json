@@ -1,0 +1,75 @@
+{
+ "_sobre": "Plano da intro cinematográfica do Reel (v11): música em Lá menor, 136 BPM, voz entra em 9,88 s, drop no bumbo em 39,37 s. Troque os tempos pelos da sua música (passo 5 do LEIA-ME) e os arquivos pelos seus. {tom} vira o 'tom' abaixo; {nota} vira a 'nota' da camada.",
+ "duracao": 58.0,
+ "saida_lufs": -14,
+ "tom": "A",
+ "momentos": [
+  [0, "PING"], [2.5, "DRONES"], [4.2, "CELLO PERGUNTA"], [9.88, "VOZ"], [13.4, "CELLO RESPOSTA"],
+  [16.09, "ACORDE Lám"], [21.5, "Sol"], [25.0, "Fá"], [28.7, "Sol"], [32.23, "Lám"],
+  [34.25, "RISERS"], [35.85, "Sol"], [39.37, "DROP"]
+ ],
+ "camadas": [
+  {"_obs": "golpe tonal no 1º quadro, na tônica (prep_ping.py)",
+   "arquivo": "prep/ping.wav", "papel": "golpe", "grupo": "ping", "em": 0, "ate": 10, "lufs_alvo": -21},
+
+  {"_obs": "drone 1: entra devagar e vai até o drop; corta seco no bumbo",
+   "arquivo": "sons/drone-1-{tom}.wav", "papel": "drone", "grupo": "drones",
+   "em": 2.5, "corte": 0, "ate": 39.37, "fade_in": 4.0, "fade_out": 0.02, "lufs_alvo": -26,
+   "filtro": "highpass=f=90,equalizer=f=180:t=q:w=1:g=1.5,equalizer=f=280:t=q:w=1:g=2,lowpass=f=2500"},
+  {"_obs": "drone 2: textura por cima do primeiro, um pouco mais baixo",
+   "arquivo": "sons/drone-2-{tom}.wav", "papel": "drone", "grupo": "drones",
+   "em": 2.5, "corte": 0, "ate": 39.37, "fade_in": 4.5, "fade_out": 0.02, "lufs_alvo": -28,
+   "filtro": "highpass=f=90,equalizer=f=180:t=q:w=1:g=1.5,equalizer=f=280:t=q:w=1:g=2.5"},
+
+  {"_obs": "cello, a 'pergunta': sozinho antes da voz. Em Dó maior, o relativo de Lá menor. Escolha no 'corte' o trecho com a frase que você quer",
+   "arquivo": "sons/cello-{nota}.wav", "nota": "C", "papel": "melodia", "grupo": "cello",
+   "em": 4.2, "corte": 0, "ate": 10.6, "fade_in": 0.8, "fade_out": 1.0, "lufs_alvo": -22, "filtro": "lowpass=f=3200"},
+  {"_obs": "cello, a 'resposta': no respiro depois da 1ª frase da voz, mais baixo",
+   "arquivo": "sons/cello-{nota}.wav", "nota": "C", "papel": "melodia", "grupo": "cello",
+   "em": 13.4, "corte": 10, "ate": 18.0, "fade_in": 0.6, "fade_out": 1.5, "lufs_alvo": -26, "filtro": "lowpass=f=3200"},
+
+  {"_obs": "voz separada com reverb (prep_voz.py), do 'whoa' até o drop",
+   "arquivo": "prep/voz-reverb.wav", "papel": "voz", "grupo": "voz",
+   "em": 9.88, "ate": 39.37, "fade_in": 0.02, "fade_out": 0.03, "lufs_alvo": -16},
+
+  {"_obs": "acordes fatiados: arquivo de progressão em Dó maior com 6 acordes de 8 s (Fá 0 s, Sol 8 s, Lám 16 s, Dó 24 s, Rém 32 s, Dó 40 s). Cada fatia cai no 1º tempo de um compasso, junto de uma palavra forte, e segue a harmonia da música: Lám Sol Fá Sol Lám Sol",
+   "arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes",
+   "em": 16.09, "corte": 15.98, "ate": 21.56, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17,
+   "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+  {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes",
+   "em": 21.5, "corte": 8.0, "ate": 25.06, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17,
+   "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+  {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes",
+   "em": 25.0, "corte": 0.08, "ate": 28.76, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17,
+   "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+  {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes",
+   "em": 28.7, "corte": 8.0, "ate": 32.29, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17,
+   "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+  {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes",
+   "em": 32.23, "corte": 15.98, "ate": 35.91, "fade_in": 0.02, "fade_out": 0.15, "lufs_alvo": -17,
+   "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+  {"arquivo": "sons/acordes-{nota}.wav", "nota": "C", "papel": "acordes", "grupo": "acordes",
+   "em": 35.85, "corte": 8.0, "ate": 39.37, "fade_in": 0.02, "fade_out": 0.02, "lufs_alvo": -17,
+   "filtro": "bass=g=5:f=70,lowpass=f=2500"},
+
+  {"_obs": "ping de acento no 1º acorde e no último",
+   "arquivo": "prep/ping.wav", "papel": "golpe", "grupo": "ping", "em": 16.09, "ate": 26.09, "lufs_alvo": -25},
+  {"arquivo": "prep/ping.wav", "papel": "golpe", "grupo": "ping", "em": 35.85, "ate": 39.37, "fade_out": 0.02, "lufs_alvo": -26},
+
+  {"_obs": "riser 1, de ar subindo: pico exatamente no drop",
+   "arquivo": "sons/riser-1-{tom}.wav", "papel": "riser", "grupo": "risers",
+   "pico_em": 39.37, "subida": 3.68, "ate": 39.37, "fade_out": 0.06, "lufs_alvo": -17.5, "filtro": "lowpass=f=5000"},
+  {"_obs": "riser 2, mais agressivo: começa antes e também tem o pico no drop",
+   "arquivo": "sons/riser-2-{tom}.wav", "papel": "riser", "grupo": "risers",
+   "pico_em": 39.37, "subida": 5.12, "ate": 39.37, "fade_out": 0.06, "lufs_alvo": -16, "filtro": "lowpass=f=4000"},
+
+  {"_obs": "no drop: o mesmo ping + um impacto tonal sem sub (passa-altas 60 Hz), para não brigar com o bumbo",
+   "arquivo": "prep/ping.wav", "papel": "golpe", "grupo": "ping", "em": 39.37, "ate": 49.37, "lufs_alvo": -21},
+  {"arquivo": "sons/impacto-{tom}.wav", "papel": "golpe", "grupo": "ping",
+   "em": 39.37, "golpe": true, "lufs_alvo": -20, "passa_altas": 60},
+
+  {"_obs": "a música inteira entra seca no bumbo: 'corte' = 65 ms antes do bumbo (30,485 s na música), que cai em 39,37 s",
+   "arquivo": "musica/musica.wav", "papel": "musica", "grupo": "musica",
+   "corte": 30.42, "ataque": 0.065, "em": 39.37, "ate": 58.0, "lufs_alvo": -11.5}
+ ]
+}
